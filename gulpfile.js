@@ -10,6 +10,7 @@ var gulp = require('gulp'),
 		imagemin = require('gulp-imagemin'),
 		pngquant = require('imagemin-pngquant'),
 		notify = require('gulp-notify'),
+		rename = require('gulp-rename'),
 		runSequence = require('run-sequence'),
 		rimraf = require('rimraf'),
 		newer = require('gulp-newer'),
@@ -81,6 +82,7 @@ gulp.task('css:build', function() {
 		.pipe(cssmin({
 			keepSpecialComments: 0, restructuring: false, processImport: false
 		}))
+		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(path.build.css))
 		.pipe(reload({stream: true}))
 		.pipe(notify('CSS compiled'));
@@ -93,6 +95,7 @@ gulp.task('js:build', function() {
 	}))
 		.pipe(rigger())
 		.pipe(uglify())
+		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(path.build.js))
 		.pipe(reload({stream: true}))
 		.pipe(notify('JS compiled'));
