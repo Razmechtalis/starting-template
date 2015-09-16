@@ -1,5 +1,5 @@
 {
-  "name": "landing-page",
+  "name": "starting-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Razmechtalis/starting-template--sass.git"
+    "url": "git://github.com/Razmechtalis/starting-template.git"
   },
   "author": "Alex",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/Razmechtalis/starting-template--sass/issues"
+    "url": "https://github.com/Razmechtalis/starting-template/issues"
   },
   "devDependencies": {
     "gulp": "~3.9.0",

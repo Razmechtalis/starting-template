@@ -49,7 +49,6 @@ var path = {
 			css: 'dev/scss/**/*.scss',
 			js: 'dev/js/**/*.js',
 			img: 'dev/img/**/*.*',
-			sprites: 'dev/sprites/**/*.*',
 			fonts: 'dev/fonts/**/*.*'
 		},
 		clean: './build'
@@ -62,7 +61,7 @@ var config = {
 		tunnel: true,
 		host: 'localhost',
 		port: 9000,
-		logPrefix: 'Frontend_Sparta'
+		logPrefix: 'Frontend_Alex'
 };
 
 gulp.task('html:build', function() {
@@ -135,12 +134,14 @@ gulp.task('sprite:build', function () {
 								imgPath: 'build/img/sprites/sprite.png',
 								cssTemplate: 'dev/spritesmith.cssTemplate',
 								cssName: 'sprite.scss',
+								padding: 20,
 								algorithm: 'binary-tree',
 								cssFormat: 'css'
 						}));
 
 		spriteData.img.pipe(gulp.dest(path.build.sprites));
-		return spriteData.css.pipe(gulp.dest('dev/scss/'));
+		return spriteData.css.pipe(gulp.dest('dev/scss/'))
+		.pipe(notify('Sprite built'));
 });
 
 gulp.task('clean', function(cb) {
@@ -149,7 +150,8 @@ gulp.task('clean', function(cb) {
 
 gulp.task('build', function(callback) {
 	runSequence('clean',
-							['html:build', 'css:build', 'js:build', 'img:build', 'sprite:build'],
+							['html:build', 'css:build', 'js:build', 'img:build'],
+							'sprite:build',
 							'fonts:build',
 							callback);
 });
@@ -163,7 +165,6 @@ gulp.task('watch', function(callback){
 	gulp.watch(path.watch.js, ['js:build']);
 	gulp.watch(path.watch.css, ['css:build']);
 	gulp.watch(path.watch.img, ['img:build']);
-	// gulp.watch(path.watch.sprites, ['sprite:build']);
 	gulp.watch(path.watch.fonts, ['fonts:build'])
 });
 
