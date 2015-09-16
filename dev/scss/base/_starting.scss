@@ -1,0 +1,65 @@
+/* #STARTING
+-------------------------------------------------- */
+
+/**
+ * Set the global "box-sizing" state to "border-box".
+ */
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/**
+ * High-, page-level styling.
+ *
+ * 1. For calculating rem
+ * 2. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ */
+
+html {
+	font-size: 62.5%; /* 10px [1] */
+	-moz-osx-font-smoothing: grayscale; /* [2] */
+	-webkit-font-smoothing: antialiased; /* [2] */
+}
+
+/**
+ * 1. Force IE10 and below to size SVG images correctly.
+ * 2. Set a maximum relative to the parent.
+ * 3. Scale the height according to the width, otherwise you get stretching.
+ * 4. Setting `vertical-align` removes the whitespace that appears under "img"
+ *    elements when they are dropped into a page as-is.
+ * 5. Offset "alt" text from surrounding copy.
+ */
+
+img {
+	width: 100% \9; /* [1] */
+	max-width: 100%; /* [2] */
+	height: auto; /* [3] */
+	vertical-align: middle; /* [4] */
+	font-style: italic; /* [5] */
+}
+
+/**
+ * If a "width" and/or "height" attribute have been explicitly defined, let’s
+ * not make the image fluid.
+ */
+
+img[width],
+img[height] {
+	max-width: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	color: #000;
+}
