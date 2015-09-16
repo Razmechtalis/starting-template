@@ -3,12 +3,6 @@
 @import "default/normalize";
 @import "default/reset";
 
-// Bourbon & Neat
-
-@import "lib/bourbon/bourbon";
-//@import "base/grid-settings";
-//@import "lib/neat/neat";
-
 // Variables
 
 @import "variables";
@@ -16,7 +10,6 @@
 // Mixins
 
 @import "base/mixins";
-
 
 
 // Helper classes
