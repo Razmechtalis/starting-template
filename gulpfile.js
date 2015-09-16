@@ -49,6 +49,7 @@ var path = {
 			css: 'dev/scss/**/*.scss',
 			js: 'dev/js/**/*.js',
 			img: 'dev/img/**/*.*',
+			sprites: 'dev/sprites/**/*.*',
 			fonts: 'dev/fonts/**/*.*'
 		},
 		clean: './build'
@@ -165,6 +166,7 @@ gulp.task('watch', function(callback){
 	gulp.watch(path.watch.js, ['js:build']);
 	gulp.watch(path.watch.css, ['css:build']);
 	gulp.watch(path.watch.img, ['img:build']);
+	gulp.watch(path.watch.sprites, ['sprite:build']);
 	gulp.watch(path.watch.fonts, ['fonts:build'])
 });
 
