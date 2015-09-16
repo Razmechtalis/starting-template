@@ -30,6 +30,7 @@
     "gulp-newer": "~0.5.1",
     "run-sequence": "~1.1.2",
     "gulp-plumber": "~1.0.1",
-    "gulp-rename": "~1.2.2"
+    "gulp-rename": "~1.2.2",
+    "gulp.spritesmith": "~4.1.0"
   }
 }
