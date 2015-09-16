@@ -78,7 +78,9 @@ gulp.task('css:build', function() {
 			errLogToConsole: true
 		}))
 		.pipe(prefixer())
-		.pipe(cssmin())
+		.pipe(cssmin({
+			keepSpecialComments: 0, restructuring: false, processImport: false
+		}))
 		.pipe(gulp.dest(path.build.css))
 		.pipe(reload({stream: true}))
 		.pipe(notify('CSS compiled'));
